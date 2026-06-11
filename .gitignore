@@ -1,0 +1,11 @@
+__pycache__
+env/
+mlruns/
+le.pkl
+ml_model.ipynb
+mlflow.db
+predictive_maintenance.csv
+test_class_report.txt
+train_class_report.txt
+test_confusion_matrix.png
+train_confusion_matrix.png
