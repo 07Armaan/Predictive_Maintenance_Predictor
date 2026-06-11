@@ -146,7 +146,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score,confusion_matrix,classification_report
-from ouliers import outliers_handler
+from outliers import outliers_handler
 import optuna
 
 # %%
