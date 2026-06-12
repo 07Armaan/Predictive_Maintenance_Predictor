@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Machine Failure Prediction Input</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #1f2937, #111827);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 12px;
+        width: 420px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #38bdf8;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 14px;
+        color: #cbd5e1;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        outline: none;
+        background: #0f172a;
+        color: #fff;
+        border: 1px solid #334155;
+    }
+
+    input:focus, select:focus {
+        border-color: #38bdf8;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        background: #38bdf8;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #0ea5e9;
+    }
+
+    .note {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 12px;
+        color: #94a3b8;
+    }
+
+        .prediction-box {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        background: #0f172a;
+        border: 1px solid #334155;
+        text-align: center;
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: bold;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Machine Input Form</h2>
+
+    <form method="post" action="/predict_predictive_maintenance#prediction-box">
+        <div class="form-group">
+            <label>Type</label>
+            <select name="Type">
+                <option value="L">L</option>
+                <option value="M">M</option>
+                <option value="H">H</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Air temperature [K]</label>
+            <input type="number" step="any" name="Air temperature [K]" required>
+        </div>
+
+        <div class="form-group">
+            <label>Process temperature [K]</label>
+            <input type="number" step="any" name="Process temperature [K]" required>
+        </div>
+
+        <div class="form-group">
+            <label>Rotational speed [rpm]</label>
+            <input type="number" name="Rotational speed [rpm]" required>
+        </div>
+
+        <div class="form-group">
+            <label>Torque [Nm]</label>
+            <input type="number" step="any" name="Torque [Nm]" required>
+        </div>
+
+        <div class="form-group">
+            <label>Tool wear [min]</label>
+            <input type="number" name="Tool wear [min]" required>
+        </div>
+
+        <button type="submit">Predict</button>
+
+        <div class="prediction-box" id="prediction-box">
+            Prediction: {{ prediction }}
+        </div>
+
+        <div class="note">
+            Enter values exactly as per machine sensor data
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
