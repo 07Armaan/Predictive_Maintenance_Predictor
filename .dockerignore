@@ -4,7 +4,6 @@ mlruns/
 le.pkl
 ml_model.ipynb
 mlflow.db
-outliers.py 
 predictive_maintenance.csv
 test_class_report.txt
 train_class_report.txt
